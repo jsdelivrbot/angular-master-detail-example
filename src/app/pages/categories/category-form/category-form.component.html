@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<form [formGroup]="form" (submit)="submitForm()">
+<form [formGroup]="resourceForm" (submit)="submitForm()">
 
   <div class="card">
     <div class="card-header">
@@ -28,9 +28,9 @@
           <label for="name">Nome</label>
           <input type="text" class="form-control" id="name" formControlName="name">
 
-          <div class="text-danger" *ngIf="form.get('name').invalid && form.get('name').touched">
-            <div *ngIf="form.get('name').errors.required">dado obrigatório</div>
-            <div *ngIf="form.get('name').errors.minlength">deve ter no mínimo 2 caracteres</div>
+          <div class="text-danger" *ngIf="resourceForm.get('name').invalid && resourceForm.get('name').touched">
+            <div *ngIf="resourceForm.get('name').errors.required">dado obrigatório</div>
+            <div *ngIf="resourceForm.get('name').errors.minlength">deve ter no mínimo 2 caracteres</div>
           </div>
         </div>
 
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <button [disabled]="submittingForm || form.invalid" type="submit" class="btn btn-primary btn-lg my-3 float-right">
+  <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg my-3 float-right">
     Salvar
   </button>
 
