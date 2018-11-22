@@ -5,6 +5,8 @@ import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
+import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 
 @NgModule({
@@ -14,13 +16,20 @@ import { HttpClientModule } from "@angular/common/http";
     RouterModule,
     HttpClientModule
   ],
-  declarations: [],
+  declarations: [
+    BreadCrumbComponent,
+    PageHeaderComponent
+  ],
   exports: [
     // shared modules
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+
+    // shared components
+    BreadCrumbComponent,
+    PageHeaderComponent
   ]
 })
 export class SharedModule { }

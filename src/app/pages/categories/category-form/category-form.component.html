@@ -1,19 +1,12 @@
-<nav aria-label="breadcrumb" class="mb-5">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-    <li class="breadcrumb-item"><a routerLink="/categories">Categorias</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{pageTitle}}</li>
-  </ol>
-</nav>
-  
-<div class="row mb-4">
-  <div class="col-md">
-    <h1 class="h2 border-left pl-2">{{pageTitle}}</h1>
-  </div>
-  <div class="col-md text-right">
-    <a routerLink="/categories" class="btn btn-light"><< Voltar</a>
-  </div>
-</div>
+<app-bread-crumb [items]="[{text: 'Categorias', link: '/categories'}, {text: pageTitle}]"></app-bread-crumb>
+
+<app-page-header 
+  [page-title]="pageTitle"
+  button-text="<< Voltar"
+  button-link="/categories"
+  button-class="btn-light"
+></app-page-header>
+
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
 

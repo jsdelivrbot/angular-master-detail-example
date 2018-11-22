@@ -28,6 +28,13 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
   public entry: Entry = new Entry();
   public categories: Category[];
 
+  public get breadCrumbItems(): Array<any> {
+    return [
+      { text: 'Lançamentos', link: '/entries' },
+      { text: this.pageTitle }
+    ]
+  }
+
   public ptBR = {
     firstDayOfWeek: 0,
     dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
